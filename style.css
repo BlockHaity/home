@@ -35,12 +35,12 @@ body {
     color: white;
 }
 
-.github-link {
+.link {
     text-align: center;
     margin-top: 10px;
 }
 
-.github-link a {
+.link a {
     display: inline-block;
     padding: 10px 20px;
     background: rgba(0, 102, 204, 0.8);
@@ -53,7 +53,7 @@ body {
     backdrop-filter: blur(5px);
 }
 
-.github-link a:hover {
+.link a:hover {
     background: rgba(0, 102, 204, 1);
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(0, 102, 204, 0.3);
