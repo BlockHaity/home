@@ -10,8 +10,8 @@ html {
 
 body {
     background-image: url(https://api.blockhaity.qzz.io/images);
-    background-size: contain;
-    background-repeat: repeat;
+    background-size: cover;
+    background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
     height: 100vh;
@@ -22,10 +22,10 @@ body {
 
 .sidebar-card {
     width: 350px;
-    height: 70%;
+    height: 75%;
     position: fixed;
     left: 60px;
-    top: 200px;
+    top: 150px;
     background: rgba(0, 0, 0, 0.7);
     border: 2px solid #0066cc;
     border-radius: 30px;
