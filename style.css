@@ -136,6 +136,34 @@ body {
     object-fit: cover;
 }
 
+code {
+    display: block;
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid #0066cc;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 10px 0;
+    overflow-x: auto;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.9em;
+    color: #e0e0e0;
+    white-space: pre;
+}
+
+code::-webkit-scrollbar {
+    height: 8px;
+}
+
+code::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+}
+
+code::-webkit-scrollbar-thumb {
+    background: #0066cc;
+    border-radius: 4px;
+}
+
 @keyframes slideUp {
     to {
         opacity: 1;
@@ -161,4 +189,5 @@ body {
         min-height: auto;
     }
 }
+
 
