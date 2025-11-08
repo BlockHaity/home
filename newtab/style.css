@@ -22,10 +22,10 @@ body {
 
 .sidebar-card {
     width: 350px;
-    height: 85%;
+    height: 75%;
     position: fixed;
     left: 60px;
-    top: 60px;
+    top: 150px;
     background: rgba(0, 0, 0, 0.7);
     border: 2px solid #0066cc;
     border-radius: 30px;
