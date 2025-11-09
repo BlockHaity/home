@@ -5,7 +5,6 @@ html {
     overflow: hidden;
     font-size: 16px;
     font-family: 'Noto Sans SC', sans-serif;
-    /* 全局字体大小基准 */
 }
 
 body {
@@ -20,12 +19,13 @@ body {
     overflow: hidden;
 }
 
+/* 搜索框样式 - 固定在顶部 */
 .search-box {
     width: 800px;
     height: 30px;
     padding: 10px 15px;
-    margin: 50px auto;
-    position: absolute;
+    position: fixed;
+    top: 30px;
     left: 50%;
     transform: translateX(-50%);
     background: rgba(0, 0, 0, 0.7);
@@ -38,15 +38,14 @@ body {
     align-items: center;
     backdrop-filter: blur(5px);
     opacity: 0;
-    bottom: -50px;
-    animation: slideUp 0.8s ease forwards;
+    z-index: 1001;
+    animation: searchSlideDown 0.8s ease forwards;
 }
 
-@keyframes slideUp {
+@keyframes searchSlideDown {
     to {
         opacity: 1;
-        bottom: 50%;
-        transform: translateX(-50%) translateY(50%);
+        top: 30px;
     }
 }
 
@@ -77,17 +76,151 @@ body {
     padding: 0 15px;
 }
 
+/* 主布局容器 - 调整位置避免遮挡搜索框 */
+.main-container {
+    display: flex;
+    gap: 20px;
+    padding: 120px 20px 20px;
+    max-width: 1500px;
+    margin: 0 auto;
+    height: calc(100vh - 120px);
+    box-sizing: border-box;
+    position: relative;
+    z-index: 1;
+}
+
+/* 左侧面板 */
+.left-panel {
+    width: 350px;
+    min-width: 350px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-height: 100%;
+    overflow-y: auto;
+}
+
+/* 右侧面板 */
+.right-panel {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-height: 100%;
+    overflow-y: auto;
+}
+
+/* 卡片基础样式 */
+.card {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    border: 2px solid #0066cc;
+    border-radius: 30px;
+    padding: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
+    color: white;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: cardSlideUp 0.6s ease forwards;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    box-sizing: border-box;
+}
+
+@keyframes cardSlideUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card:hover {
+    border-color: rgba(0, 102, 204, 0.9);
+    box-shadow: 0 8px 35px rgba(0, 102, 204, 0.25);
+    transform: translateY(-5px) scale(1.02);
+}
+
+/* 延迟动画为不同卡片添加交错效果 */
+.card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.card:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.card:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.card:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+/* 滚动条样式 */
+.left-panel::-webkit-scrollbar,
+.right-panel::-webkit-scrollbar {
+    width: 6px;
+}
+
+.left-panel::-webkit-scrollbar-track,
+.right-panel::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+}
+
+.left-panel::-webkit-scrollbar-thumb,
+.right-panel::-webkit-scrollbar-thumb {
+    background: rgba(0, 102, 204, 0.6);
+    border-radius: 3px;
+}
+
+/* 响应式设计 */
 @media (max-width: 1200px) {
     .search-box {
         width: 600px;
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
+    .main-container {
+        flex-direction: column;
+        padding: 100px 15px 15px;
+    }
 
+    .left-panel {
+        width: 100%;
+        min-width: auto;
+        flex-direction: row;
+        overflow-x: auto;
+        gap: 15px;
+    }
+
+    .left-panel .card {
+        min-width: 280px;
+    }
+}
+
+@media (max-width: 768px) {
     .search-box {
         width: 90%;
-        top: 30px;
+        top: 20px;
+    }
+
+    .main-container {
+        padding: 80px 10px 10px;
+    }
+
+    .left-panel {
+        flex-direction: column;
+    }
+
+    .left-panel .card {
+        min-width: auto;
     }
 }
 

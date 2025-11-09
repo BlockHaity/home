@@ -31,6 +31,37 @@
     </div>
     <!-- 引入搜索功能脚本 -->
     <script src="/js/search.js"></script>
+
+    <div class="main-container">
+        <div class="left-panel">
+            <div class="card">
+                <h3>Hi,BlockHaity</h3>
+                <p>现在是：<span id="current-time"></span></p>
+            </div>
+        </div>
+        <div class="right-panel"></div>
+    </div>
+
+    <script>
+        function updateTime() {
+            const now = new Date();
+            const timeString = now.toLocaleString('zh-CN', {
+                year: 'numeric',
+                month: '2-digit',
+                day: '2-digit',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit',
+                hour12: false
+            });
+            document.getElementById('current-time').textContent = timeString;
+        }
+        
+        // 立即更新一次时间
+        updateTime();
+        // 每秒更新一次时间
+        setInterval(updateTime, 1000);
+    </script>
 </body>
 
 </html>
