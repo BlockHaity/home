@@ -127,6 +127,25 @@ body {
     box-sizing: border-box;
 }
 
+.link {
+    width: auto;
+    background: rgba(75, 74, 74, 0.379);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
 @keyframes cardSlideUp {
     to {
         opacity: 1;
