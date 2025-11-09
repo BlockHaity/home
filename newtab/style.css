@@ -37,6 +37,17 @@ body {
     display: flex;
     align-items: center;
     backdrop-filter: blur(5px);
+    opacity: 0;
+    bottom: -50px;
+    animation: slideUp 0.8s ease forwards;
+}
+
+@keyframes slideUp {
+    to {
+        opacity: 1;
+        bottom: 50%;
+        transform: translateX(-50%) translateY(50%);
+    }
 }
 
 .search-box:hover {
@@ -79,3 +90,4 @@ body {
         top: 30px;
     }
 }
+
