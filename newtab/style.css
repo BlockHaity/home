@@ -128,7 +128,7 @@ body {
 }
 
 .link {
-    width: auto;
+    width: 105px;
     background: rgba(75, 74, 74, 0.379);
     color: white;
     padding: 12px 20px;
@@ -138,6 +138,7 @@ body {
     transition: all 0.3s ease;
     display: inline-block;
     text-decoration: none;
+    text-align: center;
 }
 
 .link:hover {
