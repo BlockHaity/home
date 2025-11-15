@@ -4,6 +4,10 @@
         {
             "source": "/ghapi", 
             "destination": "https://api.github.com"
+        },
+        {
+            "source": "/ghapi/:path*",
+            "destination": "https://api.github.com/:path*"
         }
     ]
 }
