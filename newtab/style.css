@@ -244,3 +244,85 @@ body {
         min-width: auto;
     }
 }
+
+/* 开关样式 - 基于.link样式修改 */
+.card-toggle {
+    margin-bottom: 8px;
+}
+
+.toggle-checkbox {
+    display: none;
+}
+
+.toggle-label {
+    width: auto;
+    background: rgba(75, 74, 74, 0.379);
+    color: white;
+    margin: 2px 0px;
+    padding: 12px 20px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.toggle-label:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* 开启状态的样式 */
+.toggle-checkbox:checked + .toggle-label {
+    background: rgba(0, 123, 255, 0.7); /* 蓝色背景表示开启 */
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 2px 8px rgba(0, 123, 255, 0.3);
+}
+
+.toggle-checkbox:checked + .toggle-label:hover {
+    background: rgba(0, 123, 255, 0.8);
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.4);
+}
+
+.toggle-text {
+    font-weight: 500;
+    color: white;
+}
+
+/* 使用圆形指示器替代滑块 */
+.toggle-indicator {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.toggle-checkbox:checked + .toggle-label .toggle-indicator {
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+.toggle-indicator:after {
+    content: "";
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.8);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: all 0.3s ease;
+}
+
+.toggle-checkbox:checked + .toggle-label .toggle-indicator:after {
+    transform: translate(-50%, -50%) scale(1);
+    background: rgba(0, 123, 255, 0.9);
+}
