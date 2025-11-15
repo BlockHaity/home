@@ -128,10 +128,10 @@ body {
 }
 
 .link {
-    width: 95px;
+    width: 105px;
     background: rgba(75, 74, 74, 0.379);
     color: white;
-    margin: 5px 3px;
+    margin: 2px 0px;
     padding: 12px 20px;
     border-radius: 8px;
     border: 1px solid rgba(255, 255, 255, 0.1);
