@@ -216,7 +216,7 @@
         const prList = document.getElementById('pr-list');
 
         try {
-            const response = await fetch(`https://api.github.com/repos/${owner}/${repo}/pulls?state=open&sort=created&direction=desc`);
+            const response = await fetch(`https://blockhaity.dpdns.org/ghapi/repos/${owner}/${repo}/pulls?state=open&sort=created&direction=desc`);
 
             if (!response.ok) {
                 throw new Error(`HTTP错误! 状态: ${response.status}`);
@@ -266,7 +266,7 @@
         const issueList = document.getElementById('issue-list');
 
         try {
-            const response = await fetch(`https://api.github.com/repos/${owner}/${repo}/issues?state=open&sort=created&direction=desc`);
+            const response = await fetch(`https://blockhaity.dpdns.org/ghapi/repos/${owner}/${repo}/issues?state=open&sort=created&direction=desc`);
 
             if (!response.ok) {
                 throw new Error(`HTTP错误! 状态: ${response.status}`);
