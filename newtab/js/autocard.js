@@ -44,6 +44,36 @@ function createCardToggle(title, cardId) {
     return toggleContainer;
 }
 
+// 处理HTML内容中的样式和脚本
+function processHtmlContent(htmlContent, cardId) {
+    const tempDiv = document.createElement('div');
+    tempDiv.innerHTML = htmlContent;
+
+    // 处理样式标签
+    const styles = tempDiv.querySelectorAll('style');
+    styles.forEach(style => {
+        const styleElement = document.createElement('style');
+        styleElement.textContent = style.textContent;
+        document.head.appendChild(styleElement);
+        style.remove();
+    });
+
+    // 处理脚本标签
+    const scripts = tempDiv.querySelectorAll('script');
+    scripts.forEach(script => {
+        const scriptElement = document.createElement('script');
+        if (script.src) {
+            scriptElement.src = script.src;
+        } else {
+            scriptElement.textContent = script.textContent;
+        }
+        document.body.appendChild(scriptElement);
+        script.remove();
+    });
+
+    return tempDiv.innerHTML;
+}
+
 // 从服务器获取Markdown文件列表
 async function loadMarkdownFiles() {
     // 获取瀑布流容器和卡片列表容器
@@ -112,10 +142,14 @@ async function loadMarkdownFiles() {
                     }
                 }
 
+                // 根据文件扩展名处理内容
+                const isHtml = filePath.toLowerCase().endsWith('.html');
+                let processedContent = isHtml ? processHtmlContent(content, cardId) : marked.parse(content);
+
                 // 设置卡片内容
                 card.innerHTML = `
                     <div class="card">
-                            ${marked.parse(content)}
+                            ${processedContent}
                     </div>
                 `;
 
@@ -157,3 +191,4 @@ async function loadMarkdownFiles() {
 
 // 页面加载完成后加载Markdown文件
 window.addEventListener('DOMContentLoaded', loadMarkdownFiles);
+
