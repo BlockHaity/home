@@ -80,10 +80,10 @@ body {
 .main-container {
     display: flex;
     gap: 20px;
-    padding: 120px 20px 20px;
+    padding: 120px 20px 0;
     max-width: 1500px;
     margin: 0 auto;
-    height: calc(100vh - 120px);
+    height: 100vh;
     box-sizing: border-box;
     position: relative;
     z-index: 1;
@@ -96,7 +96,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    max-height: 100%;
+    height: calc(100vh - 120px);
     overflow-y: auto;
 }
 
@@ -106,7 +106,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    max-height: 100%;
+    height: calc(100vh - 120px);
     overflow-y: auto;
 }
 
@@ -210,7 +210,7 @@ body {
 @media (max-width: 1024px) {
     .main-container {
         flex-direction: column;
-        padding: 100px 15px 15px;
+        padding: 100px 15px 0;
     }
 
     .left-panel {
@@ -219,10 +219,15 @@ body {
         flex-direction: row;
         overflow-x: auto;
         gap: 15px;
+        height: calc(100vh - 100px);
     }
 
     .left-panel .card {
         min-width: 280px;
+    }
+
+    .right-panel {
+        height: calc(100vh - 100px);
     }
 }
 
@@ -233,15 +238,20 @@ body {
     }
 
     .main-container {
-        padding: 80px 10px 10px;
+        padding: 80px 10px 0;
     }
 
     .left-panel {
         flex-direction: column;
+        height: calc(100vh - 80px);
     }
 
     .left-panel .card {
         min-width: auto;
+    }
+
+    .right-panel {
+        height: calc(100vh - 80px);
     }
 }
 
