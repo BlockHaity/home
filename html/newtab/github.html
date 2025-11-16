@@ -200,7 +200,7 @@
 </h3>
 
 <details open>
-    <summary>BlueArchiveArisHelper/BAAH</summary>
+    <summary id="BlueArchiveArisHelper/BAAH">BlueArchiveArisHelper/BAAH</summary>
     <h4>打开的PR</h4>
     <div id="pr-list"></div>
     <h4>打开的Issues</h4>
@@ -208,12 +208,9 @@
 </details>
 
 <script>
-    const owner = "BlueArchiveArisHelper";
-    const repo = "BAAH";
-
     // 获取PR列表
-    async function fetchPRs() {
-        const prList = document.getElementById('pr-list');
+    async function fetchPRs(owner, repo, container) {
+        const prList = container.querySelector('#pr-list');
 
         try {
             const response = await fetch(`https://blockhaity.dpdns.org/ghapi/repos/${owner}/${repo}/pulls?state=open&sort=created&direction=desc`);
@@ -262,8 +259,8 @@
     }
 
     // 获取Issues列表
-    async function fetchIssues() {
-        const issueList = document.getElementById('issue-list');
+    async function fetchIssues(owner, repo, container) {
+        const issueList = container.querySelector('#issue-list');
 
         try {
             const response = await fetch(`https://blockhaity.dpdns.org/ghapi/repos/${owner}/${repo}/issues?state=open&sort=created&direction=desc`);
@@ -333,7 +330,12 @@
 
     // 页面加载时获取数据
     window.onload = function () {
-        fetchPRs();
-        fetchIssues();
+        const summaries = document.querySelectorAll('summary');
+        summaries.forEach(summary => {
+            const [owner, repo] = summary.id.split('/');
+            const container = summary.parentElement;
+            fetchPRs(owner, repo, container);
+            fetchIssues(owner, repo, container);
+        });
     };
 </script>
