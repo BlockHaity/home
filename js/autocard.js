@@ -38,7 +38,7 @@ async function loadMarkdownFiles() {
         console.log('开始加载Markdown文件...');
 
         // 修改API端点为 root.json
-        const response = await fetch('/markdown/root.json');
+        const response = await fetch('/card/root.json');
 
         if (!response.ok) {
             throw new Error(`HTTP错误! 状态: ${response.status}`);
