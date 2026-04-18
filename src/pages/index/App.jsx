@@ -13,6 +13,11 @@ import Icon from '../../components/Icon'
 // WMC
 import "@material/web/button/filled-button"
 
+// Markdowns
+import About from './contexts/about'
+import Power from './contexts/power'
+import Github from './contexts/github'
+
 function App() {
 
   return (
@@ -46,10 +51,10 @@ function App() {
           </md-filled-button>
         </Card>
       </div>
-      <div className="right">
-        <Card style={{ width: 'auto', height: 'auto' }}>
-          <p>right</p>
-        </Card>
+      <div className="right" style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+        <Card style={{ width: 'auto', height: 'auto' }}><About /></Card>
+        <Card style={{ width: 'auto', height: 'auto' }}><Power /></Card>
+        <Card style={{ width: 'auto', height: 'auto' }}><Github /></Card>
       </div>
     </div>
   )
