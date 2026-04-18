@@ -1,0 +1,155 @@
+/* 搜索卡片 */
+.search-card {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  padding:10px;
+  background-color: rgba(29, 32, 36, 0.8);
+  border-radius: 50px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  border: 1px solid rgba(142, 144, 153, 0.5);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  margin: 30px auto;
+}
+
+/* 搜索容器 */
+.search-container {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+}
+
+/* 搜索表单 */
+.search-form {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* 搜索输入包装器 */
+.search-input-wrapper {
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 5px;
+  height: 56px;
+}
+
+/* Bing图标样式 */
+.bing-icon {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23a9c7ff' d='M5 3v18l7-3 7 3V3l-7 3-7-3z'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-right: 10px;
+}
+
+/* 搜索输入框 */
+.search-input {
+  flex: 1;
+  --md-outlined-text-field-container-color: rgba(29, 32, 36, 0.8);
+  --md-outlined-text-field-outline-color: rgba(142, 144, 153, 0.5);
+  --md-outlined-text-field-outline-color-active: #a9c7ff;
+  --md-outlined-text-field-label-text-color: #c4c6d0;
+  --md-outlined-text-field-input-text-color: #e2e2e9;
+  --md-outlined-text-field-leading-icon-color: #a9c7ff;
+  --md-outlined-text-field-trailing-icon-color: #a9c7ff;
+  --md-outlined-text-field-focus-ring-color: rgba(169, 199, 255, 0.2);
+  width: 100%;
+}
+
+/* 搜索按钮 */
+.search-button {
+  --md-filled-button-container-color: #a9c7ff;
+  --md-filled-button-label-text-color: #09305f;
+  --md-filled-button-hover-container-color: #274777;
+  --md-filled-button-hover-label-text-color: #d6e3ff;
+  --md-filled-button-pressed-container-color: #1a3155;
+  --md-filled-button-pressed-label-text-color: #d6e3ff;
+  height: 40px;
+  margin-top: 8px;
+}
+
+/* 搜索历史 */
+.search-history {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin-top: 5px;
+  background-color: rgba(29, 32, 36, 0.8);
+  border: 1px solid rgba(142, 144, 153, 0.5);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  max-height: 200px;
+  overflow-y: auto;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* 历史记录头部 */
+.history-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  border-bottom: 1px solid rgba(142, 144, 153, 0.5);
+}
+
+.history-header h4 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 500;
+  color: #e2e2e9;
+}
+
+.clear-history {
+  --md-text-button-label-text-color: #a9c7ff;
+  --md-text-button-hover-label-text-color: #d6e3ff;
+  --md-text-button-pressed-label-text-color: #d6e3ff;
+}
+
+/* 历史记录列表 */
+.history-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.history-item {
+  --md-list-item-container-color: transparent;
+  --md-list-item-label-text-color: #e2e2e9;
+  --md-list-item-hover-container-color: rgba(41, 44, 49, 0.8);
+  --md-list-item-pressed-container-color: rgba(53, 56, 61, 0.8);
+}
+
+/* 分隔线 */
+md-divider {
+  --md-divider-color: rgba(142, 144, 153, 0.5);
+}
+
+/* 滚动条样式 */
+.search-history::-webkit-scrollbar {
+  width: 6px;
+}
+
+.search-history::-webkit-scrollbar-track {
+  background: rgba(29, 32, 36, 0.8);
+  border-radius: 3px;
+}
+
+.search-history::-webkit-scrollbar-thumb {
+  background: rgba(142, 144, 153, 0.5);
+  border-radius: 3px;
+}
+
+.search-history::-webkit-scrollbar-thumb:hover {
+  background: rgba(142, 144, 153, 0.8);
+}
