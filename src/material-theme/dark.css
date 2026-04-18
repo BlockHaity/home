@@ -50,11 +50,11 @@
   --md-sys-color-surface-container-highest: rgb(51 53 58);
   
   /* Card tokens */
-  --md-card-container-color: var(--md-sys-color-surface-container);
+  --md-card-container-color: rgba(29, 32, 36, 0.8);
   --md-card-outline-color: var(--md-sys-color-outline);
   --md-card-shadow: var(--md-sys-color-shadow);
   --md-card-padding: 16px;
-  --md-card-radius: 12px;
+  --md-card-radius: 30px;
   --md-card-padding-sm: 12px;
   --md-card-padding-xs: 10px;
   --md-card-title-font-size: 16px;
