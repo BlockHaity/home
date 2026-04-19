@@ -19,7 +19,7 @@ import '@material/web/button/filled-tonal-button'
 import '@material/web/switch/switch.js'
 
 function App() {
-    const [showGithub, setShowGithub] = useState(false);
+    const [showGithub, setShowGithub] = useState(true);
 
     return (
         <>
