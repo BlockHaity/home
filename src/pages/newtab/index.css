@@ -1,0 +1,9 @@
+body {
+    background-image: url("https://api.blockhaity.qzz.io/images");
+    background-color: #f0f0f0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    margin: 0;
+}
